@@ -1,0 +1,99 @@
+body {
+    cursor: none;
+}
+
+.btn {
+    margin: 2px;
+}
+
+.jumbotron {
+    padding: 5px;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 3px solid red;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+}
+
+.cursor::after {
+    content: "";
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    border: 10px solid salmon;
+    top: -10px;
+    left: -10px;
+    border-radius: 50%;
+    opacity: .25;
+    transition-timing-function: ease-out;
+    animation: cursorAnim2 .5s infinite alternate;
+}
+
+.book {
+    height: 248px;
+    border-top: 4px solid brown;
+    border-left: 8px solid brown;
+    border-bottom: 4px solid brown;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+.cell {
+    background-color: lightgray;
+    opacity: .25;
+    height: 0.75px;
+}
+
+.cell:hover {
+    background-color: salmon;
+    opacity: .50;
+}
+
+
+.hide {
+    display: none;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+}
+
+.expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 3px solid slateblue;
+}
