@@ -2,23 +2,58 @@ body {
     cursor: none;
 }
 
+.responsive {
+    width: 100%;
+    height: auto;
+    margin: 4px;
+    border-radius: 5px;
+  }
+
+.nextball {
+    background-color: greenyellow;
+    border: 10px solid white;
+    margin: auto;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+.book, .empty {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.table {
+    border-radius: 5px;
+    margin-left: 4px;
+}
+
 .btn {
-    margin: 2px;
+    margin: 4px;
+}
+
+.btn-success {
+    disabled: true
 }
 
 .jumbotron {
-    padding: 5px;
+    margin: 4px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
 .cursor {
+    z-index: 9999;
     width: 20px;
     height: 20px;
-    border: 3px solid red;
+    border: 3px solid greenyellow;
     border-radius: 50%;
     position: absolute;
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     animation: cursorAnim .5s infinite alternate;
+    pointer-events: none;
 }
 
 .cursor::after {
@@ -26,7 +61,7 @@ body {
     width: 34px;
     height: 34px;
     position: absolute;
-    border: 10px solid salmon;
+    border: 10px solid yellow;
     top: -10px;
     left: -10px;
     border-radius: 50%;
@@ -36,7 +71,6 @@ body {
 }
 
 .book {
-    height: 248px;
     border-top: 4px solid brown;
     border-left: 8px solid brown;
     border-bottom: 4px solid brown;
@@ -46,12 +80,12 @@ body {
 
 .cell {
     background-color: lightgray;
-    opacity: .25;
-    height: 0.75px;
+    opacity: .50;
+    height: .75px;
 }
 
 .cell:hover {
-    background-color: salmon;
+    background-color: lightblue;
     opacity: .50;
 }
 

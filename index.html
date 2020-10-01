@@ -25,396 +25,77 @@
     <div class="cursor"></div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        PICK A BOOK
-                    </button>
-                    <div class="dropdown-menu selectBook" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Lord of the Flies (176 pages)</button>
-                        <button class="dropdown-item" type="button">A Wild Sheep Chase (368 pages)</button>
-                        <button class="dropdown-item" type="button">Harry Potter and the Goblet of Fire (640 pages)</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        # OF BATSMEN
-                    </button>
-                    <div class="dropdown-menu gameType" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">3 BATSMEN (SHORT GAME)</button>
-                        <button class="dropdown-item" type="button">5 BATSMEN (LONGER GAME)</button>
-                    </div>
+      
+        <div>  
+            <img src="title.gif" class="responsive"/> 
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle btn-block game-type-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PICK A BOOK</button>
+                <div class="dropdown-menu game-type game-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">LORD OF THE FLIES (176 PAGES)</button>
+                    <button class="dropdown-item" type="button">A WILD SHEEP CHASE (368 PAGES)</button>
+                    <button class="dropdown-item" type="button">HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)</button>
                 </div>
             </div>
 
-            <div class="col-md">
-                <button type="button" class="btn btn-success btn-block">START GAME</button>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle btn-block num-batsmen-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"># OF BATSMEN</button>
+                <div class="dropdown-menu num-batsmen" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">3 BATSMEN (SHORT GAME)</button>
+                    <button class="dropdown-item" type="button">5 BATSMEN (LONGER GAME)</button>
+                </div>
             </div>
-
+            <button type="button" class="btn btn-success btn-block start-reset" disabled>START GAME</button>
         </div>
+
+
+            
 
         <div class="row">
           <div class="col-md-8">
-            <div class="jumbotron">
-                <h1 class="display-4"> SIX! </h1>
+            <div class="jumbotron hide">
+                <h1 class="display-4 score"> **PLAYER 1** <p class="lead"> **click on a page below to score** </p></h1>
+                
             </div>
           </div>
           <div class="col-md-4">
-            <div class="jumbotron">
-                <small class="display-4 text-muted"> PAGE # </small>
+            <div class="jumbotron hide">
+                <small class="display-4 text-muted page"> PAGE # </small>
             </div>
           </div>
         </div>
 
         <div class="row">
-            <div class="col-md-2">NOTHING</div>
-            <div class="col-md-8 book" id="book">
+            <div class="col-md-2 hide empty"></div>
+            <div class="col-md-8 book hide">
                 <div class="grid">
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
                 </div>
             </div>
-            <div class="col-2">HOVER HERE FOR NEXT BALL</div>
+            <div class="col-2 hide nextball">READY!</div>
         </div>
 
-        <table class="table bg-info">
+        <table class="table table-sm table-dark hide">
             <thead>
-                <th scope="col" colspan="3" id="displayTeamName"> MY TEAM </th>
-                <th scope="col"> TOTAL RUNS </th>
+                <th class= "bg-warning" style="width: 80.00%" id="displayTeamName" colspan="2"> MY TEAM </th>
+                <th class="text-center" style="width: 20.00%"> TOTAL RUNS </th>
             </thead>
             <tbody>
                 <tr>
-                    <td>BATSMAN</td>
-                    <td colspan="2" id="ballByBall-1">Lorem ipsum dolor, sit amet consectetur adipisicing. </td>
-                    <td id="batsmanOneTotal">44(10)</td>
+                    <td style="width: 20%">BATSMAN 1</td>
+                    <td style="width: 60%">DNB </td>
+                    <td style="width: 20%;" class="text-center">44(10)</td>
                 </tr>
 
                 <tr>
-                    <td>BATSMAN</td>
-                    <td colspan="2" id="ballByBall-2">Lorem ipsum dolor</td>
-                    <td id="batsmanTwoTotal">44(10)</td>
+                    <td style="width: 20%">BATSMAN 2</td>
+                    <td style="width: 60%">DNB </td>
+                    <td style="width: 20%;" class="text-center">44(10)</td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">BATSMAN 3</td>
+                    <td style="width: 60%">DNB </td>
+                    <td style="width: 20%;" class="text-center">44(10)</td>
                 </tr>
                 
             </tbody>
