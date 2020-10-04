@@ -2,6 +2,10 @@ body {
     cursor: none;
 }
 
+p {
+    margin: 0;
+}
+
 .responsive {
     width: 100%;
     height: auto;
@@ -9,22 +13,24 @@ body {
     border-radius: 5px;
   }
 
-.nextball {
-    background-color: greenyellow;
-    border: 10px solid white;
-    margin: auto;
-    font-size: 10px;
-    text-align: center;
+.umpire-signal {
+    max-height: 50%;
+    max-width: 50%;
+    border-radius: 5px;
 }
 
+.nb{
+    margin: auto;
+}
 
-.book, .empty {
-    margin-top: auto;
-    margin-bottom: auto;
+.nextball {
+    background-color: yellowgreen;
+    border-color: yellowgreen;
 }
 
 .table {
     border-radius: 5px;
+    border-top: 2px solid white;
     margin-left: 4px;
 }
 
@@ -41,6 +47,10 @@ body {
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+}
+
+.score {
+    height: 158.594;
 }
 
 .cursor {
@@ -75,18 +85,14 @@ body {
     border-left: 8px solid brown;
     border-bottom: 4px solid brown;
     padding-left: 0;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .cell {
-    background-color: lightgray;
+    background-color: #949494;
     opacity: .50;
     height: .75px;
-}
-
-.cell:hover {
-    background-color: lightblue;
-    opacity: .50;
 }
 
 

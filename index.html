@@ -32,20 +32,22 @@
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle btn-block game-type-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PICK A BOOK</button>
                 <div class="dropdown-menu game-type game-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">LORD OF THE FLIES (176 PAGES)</button>
-                    <button class="dropdown-item" type="button">A WILD SHEEP CHASE (368 PAGES)</button>
                     <button class="dropdown-item" type="button">HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)</button>
+                    <button class="dropdown-item" type="button">A WILD SHEEP CHASE (368 PAGES)</button>
+                    <button class="dropdown-item" type="button">LORD OF THE FLIES (176 PAGES)</button>
                 </div>
             </div>
 
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle btn-block num-batsmen-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"># OF BATSMEN</button>
                 <div class="dropdown-menu num-batsmen" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">3 BATSMEN (SHORT GAME)</button>
-                    <button class="dropdown-item" type="button">5 BATSMEN (LONGER GAME)</button>
+                    <button class="dropdown-item" type="button">3 (SHORT GAME)</button>
+                    <button class="dropdown-item" type="button">5 (LONGER GAME)</button>
                 </div>
             </div>
-            <button type="button" class="btn btn-success btn-block start-reset" disabled>START GAME</button>
+            <button type="button" class="btn btn-success btn-block start" disabled>START GAME</button>
+            <button type="button" class="btn btn-warning btn-block reset hide">RESET GAME</button>
+            <button type="button" class="btn btn-success btn-block ready-player2 hide" disabled>READY PLAYER TWO</button>
         </div>
 
 
@@ -54,13 +56,14 @@
         <div class="row">
           <div class="col-md-8">
             <div class="jumbotron hide">
-                <h1 class="display-4 score"> **PLAYER 1** <p class="lead"> **click on a page below to score** </p></h1>
+                <small class="display-4 score"> **PLAYER ONE** <p class="lead"> click inside the book to play the first ball </p></small>
                 
             </div>
           </div>
           <div class="col-md-4">
             <div class="jumbotron hide">
-                <small class="display-4 text-muted page"> PAGE # </small>
+                <small class="lead text-muted page-prefix">PAGE #</small>
+                <small class="lead text-muted page"></small>
             </div>
           </div>
         </div>
@@ -68,38 +71,72 @@
         <div class="row">
             <div class="col-md-2 hide empty"></div>
             <div class="col-md-8 book hide">
+                <span class = "gridmom">
                 <div class="grid">
                 </div>
+                </span>
             </div>
-            <div class="col-2 hide nextball">READY!</div>
+            <div class="col 2 nb">
+            <button type="button" class="btn btn-success btn-block nextball hide" disabled>READY!</button>
+            </div>
         </div>
 
+
+        
         <table class="table table-sm table-dark hide">
             <thead>
-                <th class= "bg-warning" style="width: 80.00%" id="displayTeamName" colspan="2"> MY TEAM </th>
-                <th class="text-center" style="width: 20.00%"> TOTAL RUNS </th>
+                <th class= "bg-warning" style="width: 80.00%" colspan="2" id="team-name"> MY TEAM </th>
+                <th class="text-center" style="width: 20.00%" id="team-total"></th>
             </thead>
             <tbody>
                 <tr>
-                    <td style="width: 20%">BATSMAN 1</td>
-                    <td style="width: 60%">DNB </td>
-                    <td style="width: 20%;" class="text-center">44(10)</td>
+                    <td style="width: 20%">BATSMAN-1</td>
+                    <td style="width: 60%" id="b1innings"></td>
+                    <td style="width: 20%;" class="text-center" id="b1total">0(0)</td>
                 </tr>
 
                 <tr>
-                    <td style="width: 20%">BATSMAN 2</td>
-                    <td style="width: 60%">DNB </td>
-                    <td style="width: 20%;" class="text-center">44(10)</td>
+                    <td style="width: 20%">BATSMAN-2</td>
+                    <td style="width: 60%" id="b2innings"></td>
+                    <td style="width: 20%;" class="text-center" id="b2total"></td>
                 </tr>
 
                 <tr>
-                    <td style="width: 20%">BATSMAN 3</td>
-                    <td style="width: 60%">DNB </td>
-                    <td style="width: 20%;" class="text-center">44(10)</td>
+                    <td style="width: 20%">BATSMAN-3</td>
+                    <td style="width: 60%" id="b3innings"></td>
+                    <td style="width: 20%;" class="text-center" id="b3total"></td>
                 </tr>
+
+                <tr class="hide" id="num-4">
+                    <td style="width: 20%">BATSMAN-4</td>
+                    <td style="width: 60%" id="b4innings">  </td>
+                    <td style="width: 20%;" class="text-center" id="b4total"></td>
+                </tr>
+
+                <tr class="hide" id="num-5">
+                    <td style="width: 20%">BATSMAN-5</td>
+                    <td style="width: 60%" id="b5innings">  </td>
+                    <td style="width: 20%;" class="text-center" id="b5total"></td>
+                </tr>
+
+
                 
             </tbody>
         </table>
+        
+
+
+       
+        <table class="table table-sm table-dark hide" id="runchase">
+            <tbody>
+                <tr>
+                    <td class="text-center" style="width: 100.00%" id="runchase-display"> PLAYER TWO TRAILS BY X RUNS 
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        
         
 
     </div>
