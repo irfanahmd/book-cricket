@@ -389,7 +389,7 @@ function ballOutcome(e){
         ballScore = 2;
         break; 
         case 0:    
-        $('.score').html('<img src="OUT.jpg" class="umpire-signal"/> OUT!!')
+        $('.score').html('<img src="out.jpg" class="umpire-signal"/> OUT!!')
         ballScore = "W";
         break;
     }
@@ -443,6 +443,9 @@ function ballOutcome(e){
 
         if (playerOne === false && playerTwoTotal > playerOneTotal){
             $('#runchase-display').text(`PLAYER TWO WINS BY ${wicketsLeft} WICKET(S)`);
+            $('.nextball').addClass('hide')
+            $('.nextball').addClass('hide')
+
         }
 
     } else {
