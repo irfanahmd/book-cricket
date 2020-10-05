@@ -28,14 +28,21 @@ p {
     border-color: yellowgreen;
 }
 
-.table {
+table {
     border-radius: 5px;
     border-top: 2px solid white;
     margin-left: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+thead {
+    font-size: 18px;
 }
 
 .btn {
     margin: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
 }
 
 .btn-success {
@@ -45,8 +52,15 @@ p {
 .jumbotron {
     margin: 4px;
     padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'IBM Plex Sans', sans-serif;
     text-align: center;
+}
+
+.img-container {
+    min-height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .score {
