@@ -90,11 +90,10 @@ p {
 }
 
 .cell {
-    background-color: #949494;
-    opacity: .50;
+    background-image: linear-gradient(grey, white);
+    opacity: .80;
     height: .75px;
 }
-
 
 .hide {
     display: none;

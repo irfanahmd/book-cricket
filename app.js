@@ -1,3 +1,7 @@
+// add star to current batsmen
+// add instructions
+// add sounds
+
 /*----- constants -----*/
 
 // Player 1 Player 2
@@ -142,6 +146,10 @@ function ballOutcomeEdge(e) {
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
                 $('#runchase-display').text(`PLAYER ONE WINS BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+            }
+
+            if(playerOne === false && playerTwoTotal === playerOneTotal) {
+                $('#runchase-display').text(`NOTHING SEPARATES THE TWO TEAMS`);
             }
             
             teamTotal = 0
@@ -300,6 +308,10 @@ function init() {
 
     refresh()
 
+    $('.score').html('<small class="display-4 score"> **PLAYER ONE** <p class="lead"> click inside the book to play the first ball </p></small>')
+
+    $('.page').text('---')
+
 }
 
 function reset() {
@@ -398,10 +410,10 @@ function ballOutcome(e){
     $('.book').css('pointer-events', 'none');
     $('body').css('cursor', 'not-allowed');
 
-    $('.cell:hover').css('background-color', 'yellow');
+    $('.cell:hover').css('background-image', 'linear-gradient(yellow, yellow)');
 
     setTimeout(function(){
-        $('.cell').css('background-color', '#949494') 
+        $('.cell').css('background-image', 'linear-gradient(grey, white)') 
     }, 250);
     
     setTimeout(function(){
@@ -445,8 +457,12 @@ function ballOutcome(e){
             $('#runchase-display').text(`PLAYER TWO WINS BY ${wicketsLeft} WICKET(S)`);
             $('.nextball').addClass('hide')
             $('.nextball').addClass('hide')
-
         }
+
+        if (playerOne === false && playerTwoTotal === playerOneTotal){
+            $('#runchase-display').text(`PLAYER TWO NEEDS 1 RUN TO WIN`);
+        }
+
 
     } else {
 
@@ -478,6 +494,11 @@ function ballOutcome(e){
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
                 $('#runchase-display').text(`PLAYER ONE WINS BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
             }
+
+            if(playerOne === false && playerTwoTotal === playerOneTotal) {
+                $('#runchase-display').text(`NOTHING SEPARATES THE TWO TEAMS`);
+            }
+
             
             teamTotal = 0
 
@@ -507,7 +528,6 @@ function ballOutcome(e){
 }
 
 function secondinnings() {
-    console.log("second innings")
     init()
     playerOne = false
     $('#runchase').removeClass('hide');
