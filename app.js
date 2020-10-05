@@ -184,6 +184,16 @@ $('.nextball').mouseover(function() {
     $('.score').html('<p class = "lead" >click inside the book to play the next ball</p>');
 })
 
+$('.grid').mouseover(function() {
+    $('.cell:hover').css('background-image', 'linear-gradient(yellowgreen, greenyellow, white)');
+    
+    setTimeout(function(){
+        $('.cell').css('background-image', 'linear-gradient(grey, white)') 
+    }, 2000);
+})
+    
+    
+
 
 /*----- functions -----*/
 
