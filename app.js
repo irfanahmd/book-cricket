@@ -9,6 +9,29 @@ const books = ['HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)', 'A WILD SHEEP 
 const lineup = ['3 (SHORT GAME)', '5 (LONGER GAME)']
 const gameLength = [3, 5]
 
+const stadium = new Audio()
+stadium.src = 'sounds/Stadium Noise Loop.wav'
+stadium.loop = true
+
+const six = new Audio()
+six.src = 'sounds/Six Audience.wav'
+
+const bighit = new Audio()
+bighit.src = 'sounds/Bat To Ball Fast Hit.wav'
+
+const  mediumhit = new Audio()
+mediumhit.src = 'sounds/Bat to Ball Normal Hit.wav'
+
+const  smallhit = new Audio()
+smallhit.src = 'sounds/Bat To Ball Slow Hit.wav'
+
+const  out = new Audio()
+out.src = 'sounds/Ball Hit To Ground.wav'
+
+const  bowlerrun = new Audio()
+bowlerrun.src = 'sounds/Bowler Running Audience Reaction.wav'
+
+
 
 
 /*----- app's state (variables) -----*/
@@ -100,6 +123,10 @@ function ballOutcomeEdge(e) {
         $('.page').text('0');
         $('.score').html('HIT WICKET <p class="lead"> too close to the cover page or away from the pages </p>');
         ballScore = "W";
+        bowlerrun.pause()
+        bowlerrun.currentTime = 0
+        out.play()
+        bowlerrun.play()
 
         $('.grid').css('pointer-events', 'none');
         $('.book').css('pointer-events', 'all');
@@ -243,6 +270,8 @@ function showSelectedBatsmen(event){
 function init() {
 
     $('.how-to-play').addClass("hide")
+
+    stadium.play()
 
     startButton.addClass("hide")
 
@@ -433,22 +462,36 @@ function ballOutcome(e){
         case 8:    
         $('.score').text('quick single');
         ballScore = 1;
+        smallhit.play()
         break;
         case 6:   
         $('.score').html('<img src="six.jpg" class="umpire-signal"/> SIX!!')
         ballScore = 6;
+        bighit.play()
+        six.pause()
+        six.currentTime = 0
+        six.play()
         break;
         case 4:
         $('.score').html('<img src="four.jpg" class="umpire-signal"/> FOUR!')
         ballScore = 4;
+        bighit.play()
+        six.pause()
+        six.currentTime = 0
+        six.play()
         break;  
         case 2:    
         $('.score').text('two');
         ballScore = 2;
+        mediumhit.play()
         break; 
         case 0:    
         $('.score').html('<img src="out.jpg" class="umpire-signal"/> OUT!!')
         ballScore = "W";
+        bowlerrun.pause()
+        bowlerrun.currentTime = 0
+        out.play()
+        bowlerrun.play()
         break;
     }
 
