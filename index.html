@@ -9,7 +9,6 @@
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
-    
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -21,6 +20,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;1,500;1,700&display=swap" rel="stylesheet">
+    
 
 
 </head>
@@ -32,6 +32,37 @@
       
         <div>  
             <img src="title.gif" class="responsive"/> 
+            
+            <p>
+                <button class="btn btn-outline-info btn-block how-to-play" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  HOW TO PLAY
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    Book Cricket is a game of scoring runs.
+
+                    Toss a coin or play a game of rock, paper, scissors to decide who bats first.
+                    
+                    Decide on the number of batsmen and the book you want to play with.
+
+                    Rifle through the pages of the book and select a place to open the book.
+                    
+                    The last unit of the even numbered page number determines the outcome. For instance, if the page opened is 154, the last unit is 4 and you score 4. 
+                    
+                    2,4 and 6 will be added to the batsman’s score and 8 will be counted as a single. 0 means the batsman is out.
+                    
+                    Stay away from the edges of the book to avoid getting out.
+                    
+                    After playing hover the mouse on the red square to ‘close the book’ and face the next ball.
+                    
+                    The innings will go on until all the batsmen are out.
+                    
+                    The second player then takes over the book and continues to play.
+                    
+                    At the end whoever has the higher score wins!
+                </div>
+              </div>
 
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle btn-block game-type-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PICK A BOOK</button>
@@ -89,36 +120,38 @@
         
         <table class="table table-sm table-dark hide">
             <thead>
-                <th class= "bg-warning align-text-top" style="width: 80.00%" colspan="2" id="team-name">MY TEAM</th>
+                <th class= "bg-warning align-text-top" style="width: 80.00%" colspan="2" id="team-name" contenteditable="true">MY TEAM <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                  </svg> </th>
                 <th class="text-center" style="width: 20.00%" id="team-total"></th>
             </thead>
             <tbody>
                 <tr>
-                    <td style="width: 20%"><em>BATSMAN1</em></td>
+                    <td style="width: 20%" id="b1name"><em>BATSMAN1</em></td>
                     <td style="width: 60%" id="b1innings"></td>
                     <td style="width: 20%;" class="text-center" id="b1total">0(0)</td>
                 </tr>
 
                 <tr>
-                    <td style="width: 20%"><em>BATSMAN2</em></td>
+                    <td style="width: 20%" id="b2name"><em>BATSMAN2</em></td>
                     <td style="width: 60%" id="b2innings"></td>
                     <td style="width: 20%;" class="text-center" id="b2total"></td>
                 </tr>
 
                 <tr>
-                    <td style="width: 20%"><em>BATSMAN3</em></td>
+                    <td style="width: 20%" id="b3name"><em>BATSMAN3</em></td>
                     <td style="width: 60%" id="b3innings"></td>
                     <td style="width: 20%;" class="text-center" id="b3total"></td>
                 </tr>
 
                 <tr class="hide" id="num-4">
-                    <td style="width: 20%"><em>BATSMAN4</em></td>
+                    <td style="width: 20%" id="b4name"><em>BATSMAN4</em></td>
                     <td style="width: 60%" id="b4innings">  </td>
                     <td style="width: 20%;" class="text-center" id="b4total"></td>
                 </tr>
 
                 <tr class="hide" id="num-5">
-                    <td style="width: 20%"><em>BATSMAN5</em></td>
+                    <td style="width: 20%" id="b5name"><em>BATSMAN5</em></td>
                     <td style="width: 60%" id="b5innings">  </td>
                     <td style="width: 20%;" class="text-center" id="b5total"></td>
                 </tr>

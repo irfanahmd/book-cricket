@@ -6,6 +6,10 @@ p {
     margin: 0;
 }
 
+.editname {
+    font-size: 12px;
+}
+
 .responsive {
     width: 100%;
     height: auto;
@@ -104,8 +108,7 @@ thead {
 }
 
 .cell {
-    background-image: linear-gradient(grey, white);
-    opacity: .80;
+    background-image: linear-gradient(black, darkgrey, white, white);
     height: .75px;
 }
 

@@ -1,6 +1,5 @@
-// add star to current batsmen
-// add instructions
 // add sounds
+//change team name and player name
 
 /*----- constants -----*/
 
@@ -89,6 +88,8 @@ readyPlayerTwo.click(secondinnings)
 pageGrid.click(ballOutcome);
 
 
+
+
 //edge case 
 pageGrid.parent().parent().click(ballOutcomeEdge)
 
@@ -97,12 +98,13 @@ function ballOutcomeEdge(e) {
 
         //lose wicket
         $('.page').text('0');
-        $('.score').html('HIT WICKET <p class="lead"> too close to the book cover </p>');
+        $('.score').html('HIT WICKET <p class="lead"> too close to the cover page or away from the pages </p>');
         ballScore = "W";
 
         $('.grid').css('pointer-events', 'none');
-        $('.book').css('pointer-events', 'none');
+        $('.book').css('pointer-events', 'all');
         $('body').css('cursor', 'not-allowed');
+        $('.gridmom').attr('title', 'hover on the red square for the next ball')
     
         $('.book:hover').css('border-color', 'yellow');
     
@@ -119,9 +121,11 @@ function ballOutcomeEdge(e) {
         $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
     
     
-        $('.gridmom').attr('title', 'hover on the red square for next ball')
+        
 
         wicketsLeft = wicketsLeft - 1
+
+        currentBatsman.nameDOM.find("span").addClass('hide')
 
         //still need to push the ball
 
@@ -129,6 +133,8 @@ function ballOutcomeEdge(e) {
 
             // show total
             teamTotalDisplay.text(`${teamTotal}`)
+
+            currentBatsman.nameDOM.find("span").addClass('hide')
             
             
 
@@ -172,6 +178,8 @@ function ballOutcomeEdge(e) {
 
         currentBatsman = gameData[`batsman${1+gameLength[numBatsmenIndex]-wicketsLeft}`];
 
+        currentBatsman.nameDOM.append('<span>*</span>')
+
         newRunningScore = []
         newTotal = 0
 
@@ -180,17 +188,21 @@ function ballOutcomeEdge(e) {
 
 $('.nextball').mouseover(function() {
     refresh ()
-    pageNumber.text("---")
+    $('.page').text("---")
     $('.score').html('<p class = "lead" >click inside the book to play the next ball</p>');
 })
 
-$('.grid').mouseover(function() {
-    $('.cell:hover').css('background-image', 'linear-gradient(yellowgreen, greenyellow, white)');
-    
+
+
+$('.grid').mouseover(function(e) {
+    $(e.target).css('background-image', 'linear-gradient(yellowgreen, greenyellow, white)');
     setTimeout(function(){
-        $('.cell').css('background-image', 'linear-gradient(grey, white)') 
-    }, 2000);
+        $(e.target).css('background-image', 'linear-gradient(black, darkgrey, white, white)');  
+    }, 500)
 })
+
+
+
     
     
 
@@ -229,6 +241,8 @@ function showSelectedBatsmen(event){
 
 
 function init() {
+
+    $('.how-to-play').addClass("hide")
 
     startButton.addClass("hide")
 
@@ -284,6 +298,8 @@ function init() {
     // current batsmen
     currentBatsman = gameData['batsman1']
 
+    currentBatsman.nameDOM.append('<span>*</span>')
+
     // wickets left
 
     wicketsLeft = gameLength[numBatsmenIndex]
@@ -326,6 +342,8 @@ function init() {
 
 function reset() {
 
+    $('.how-to-play').removeClass("hide")
+
     startButton.removeClass("hide")
 
     resetButton.addClass("hide")
@@ -356,6 +374,19 @@ function reset() {
     //empty divs
     $('.grid').empty()
 
+    //remove ready player 2 button
+    readyPlayerTwo.addClass("hide")
+
+
+    //remove *
+    currentBatsman.nameDOM.find("span").addClass('hide')
+
+
+    //change team name
+    $('#team-name').html(`TEAM ONE <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+  </svg>`)
+
 }
 
 //div generator
@@ -385,12 +416,17 @@ function setupBattingLineup() {
 
         gameData[`batsman${count}`].totalDOM = $(`#b${count}total`)
 
+        gameData[`batsman${count}`].nameDOM = $(`#b${count}name`)
+
         count --
     }
 
 }
 
 function ballOutcome(e){
+
+    
+
     pageNumber = $('.page').text(e.target.className.split("-")[1]);
     
     switch (pageNumber.text() % 10) {
@@ -416,14 +452,18 @@ function ballOutcome(e){
         break;
     }
 
+    
     $(this).css('pointer-events', 'none');
-    $('.book').css('pointer-events', 'none');
+    $('.book').css('pointer-events', 'all');
     $('body').css('cursor', 'not-allowed');
+    $('.gridmom').attr('title', 'hover on the red square for the next ball')
+
+    
 
     $('.cell:hover').css('background-image', 'linear-gradient(yellow, yellow)');
 
     setTimeout(function(){
-        $('.cell').css('background-image', 'linear-gradient(grey, white)') 
+        $('.cell').css('background-image', 'linear-gradient(black, darkgrey, white, white)') 
     }, 250);
     
     setTimeout(function(){
@@ -435,7 +475,7 @@ function ballOutcome(e){
     $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
 
 
-    $('.gridmom').attr('title', 'hover on the red square for next ball')
+    
 
 
     // record score in scorecard
@@ -457,6 +497,8 @@ function ballOutcome(e){
         currentBatsman.total = newTotal
 
         currentBatsman.totalDOM.text(`${currentBatsman.total} (${newRunningScore.length})`)
+
+        
 
         if (playerOne === false) {
             playerTwoTotal = teamTotal;
@@ -480,14 +522,18 @@ function ballOutcome(e){
         //wicketsLeft
         wicketsLeft = wicketsLeft - 1
 
+        currentBatsman.nameDOM.find("span").addClass('hide')
+
         //still need to push the ball
+
+        
 
         if (wicketsLeft < 1) {
 
             // show total
             teamTotalDisplay.text(`${teamTotal}`)
-            
-            
+
+            currentBatsman.nameDOM.find("span").addClass('hide')
 
 
             // remove hover here box
@@ -517,7 +563,7 @@ function ballOutcome(e){
             teamTotalDisplay.text(`${teamTotal}-${gameLength[numBatsmenIndex]-wicketsLeft}`)
         }
         
-
+        
         newRunningScore.push(ballScore)
         currentBatsman.runningScore = Object.assign([], newRunningScore)
         currentBatsman.runningScoreDOM.text(currentBatsman.runningScore.join(" "));
@@ -529,6 +575,8 @@ function ballOutcome(e){
         currentBatsman.isOut = true;
 
         currentBatsman = gameData[`batsman${1+gameLength[numBatsmenIndex]-wicketsLeft}`];
+
+        currentBatsman.nameDOM.append('<span>*</span>')
 
         newRunningScore = []
         newTotal = 0
@@ -543,7 +591,9 @@ function secondinnings() {
     $('#runchase').removeClass('hide');
     $('#runchase-display').text(`PLAYER TWO TRAILS BY ${playerOneTotal} RUNS`)
     readyPlayerTwo.addClass("hide")
-    $('#team-name').text('TEAM TWO')
+    $('#team-name').html(`TEAM TWO <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+  </svg>`)
 
     $('.score').html('<small class="display-4 score"> **PLAYER TWO** <p class="lead"> click inside the book to play the first ball </p></small>')
     
