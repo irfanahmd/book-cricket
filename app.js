@@ -168,7 +168,6 @@ function ballOutcomeEdge(e) {
 
             // remove hover here box
             $('.nextball').addClass('hide')
-            $('.nextball').addClass('hide')
 
             // show ready player 2 button
 
@@ -178,11 +177,22 @@ function ballOutcomeEdge(e) {
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
-                $('#runchase-display').text(`PLAYER ONE WINS BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                $('#runchase-display').text(`PLAYER ONE WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                setTimeout(function(){
+                    setTimeout(function(){
+                        $('.score').text('PLAYER ONE WON')
+                    }, 500)
+                })  
             }
 
             if(playerOne === false && playerTwoTotal === playerOneTotal) {
                 $('#runchase-display').text(`NOTHING SEPARATES THE TWO TEAMS`);
+                setTimeout(function(){
+                    setTimeout(function(){
+                        $('.score').text('MATCH TIED')
+                    }, 500)
+                    
+                }) 
             }
             
             teamTotal = 0
@@ -205,8 +215,10 @@ function ballOutcomeEdge(e) {
 
         currentBatsman = gameData[`batsman${1+gameLength[numBatsmenIndex]-wicketsLeft}`];
 
-        currentBatsman.nameDOM.append('<span>*</span>')
-
+        if(currentBatsman !== undefined) {
+            currentBatsman.nameDOM.append('<span>*</span>')
+        }
+        
         newRunningScore = []
         newTotal = 0
 
@@ -270,6 +282,7 @@ function showSelectedBatsmen(event){
 function init() {
 
     $('.how-to-play').addClass("hide")
+    $('.game-info').addClass("hide")
 
     stadium.play()
 
@@ -372,6 +385,8 @@ function init() {
 function reset() {
 
     $('.how-to-play').removeClass("hide")
+
+    $('.game-info').removeClass("hide")
 
     startButton.removeClass("hide")
 
@@ -549,9 +564,12 @@ function ballOutcome(e){
         }
 
         if (playerOne === false && playerTwoTotal > playerOneTotal){
-            $('#runchase-display').text(`PLAYER TWO WINS BY ${wicketsLeft} WICKET(S)`);
+            $('#runchase-display').text(`PLAYER TWO WON BY ${wicketsLeft} WICKET(S)`);
             $('.nextball').addClass('hide')
-            $('.nextball').addClass('hide')
+            setTimeout(function(){
+                $('.score').text('PLAYER TWO WON')
+            }, 500)
+            
         }
 
         if (playerOne === false && playerTwoTotal === playerOneTotal){
@@ -581,7 +599,6 @@ function ballOutcome(e){
 
             // remove hover here box
             $('.nextball').addClass('hide')
-            $('.nextball').addClass('hide')
 
             // show ready player 2 button
 
@@ -591,11 +608,19 @@ function ballOutcome(e){
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
-                $('#runchase-display').text(`PLAYER ONE WINS BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                $('#runchase-display').text(`PLAYER ONE WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                setTimeout(function(){
+                    $('.score').text('PLAYER ONE WON')
+                }, 500)
+                
             }
 
             if(playerOne === false && playerTwoTotal === playerOneTotal) {
                 $('#runchase-display').text(`NOTHING SEPARATES THE TWO TEAMS`);
+                setTimeout(function(){
+                    $('.score').text('MATCH TIED')
+                }, 500)
+                
             }
 
             
@@ -619,7 +644,9 @@ function ballOutcome(e){
 
         currentBatsman = gameData[`batsman${1+gameLength[numBatsmenIndex]-wicketsLeft}`];
 
-        currentBatsman.nameDOM.append('<span>*</span>')
+        if(currentBatsman !== undefined) {
+            currentBatsman.nameDOM.append('<span>*</span>')
+        }
 
         newRunningScore = []
         newTotal = 0
