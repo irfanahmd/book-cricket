@@ -1,6 +1,3 @@
-// add sounds
-//change team name and player name
-
 /*----- constants -----*/
 
 // Player 1 Player 2
