@@ -172,6 +172,10 @@ function ballOutcomeEdge(e) {
             if(playerOne === true) {
                 playerOneTotal = teamTotal
                 readyPlayerTwo.removeClass("hide")
+                setTimeout(function(){
+                    P1teamName = $('#team-name-text').text()
+                    $('.score').text(`${P1teamName} ALL OUT FOR ${playerOneTotal}`)
+                }, 500)
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
@@ -284,9 +288,6 @@ function init() {
 
    //put cursor at end
 
-   
-
-   //
 
     // collapse how to play
     $('#collapseExample').removeClass("show")
@@ -618,6 +619,10 @@ function ballOutcome(e){
             if(playerOne === true) {
                 playerOneTotal = teamTotal
                 readyPlayerTwo.removeClass("hide")
+                setTimeout(function(){
+                    P1teamName = $('#team-name-text').text()
+                    $('.score').text(`${P1teamName} ALL OUT FOR ${playerOneTotal}`)
+                }, 500)
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
