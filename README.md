@@ -1,5 +1,3 @@
-//Your game's title: A description of your game. Background info of the game is a nice touch.
-
 <p align="center">
   <img src="title.gif"/>
 </p>
