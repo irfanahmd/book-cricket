@@ -2,6 +2,11 @@ body {
     cursor: none;
 }
 
+#team-name td {
+    border: none;
+    cursor: pointer;
+}
+
 p {
     margin: 0;
 }

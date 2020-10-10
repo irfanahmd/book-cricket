@@ -177,10 +177,10 @@ function ballOutcomeEdge(e) {
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
-                $('#runchase-display').text(`PLAYER ONE WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                $('#runchase-display').text(`${P1teamName} WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
                 setTimeout(function(){
                     setTimeout(function(){
-                        $('.score').text('PLAYER ONE WON')
+                        $('.score').text(`${P1teamName} WINS`)
                     }, 500)
                 })  
             }
@@ -241,11 +241,6 @@ $('.grid').mouseover(function(e) {
 })
 
 
-
-    
-    
-
-
 /*----- functions -----*/
 
 
@@ -280,6 +275,23 @@ function showSelectedBatsmen(event){
 
 
 function init() {
+
+    $('#team-name').html(`<td id="team-name-text" contenteditable="true">TEAM ONE</td><td><svg id="editButton" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+  </svg></td>`)
+
+  $('#editButton').click(function(){
+    $('#team-name-text').focus();
+   });
+
+   //put cursor at end
+
+   
+
+   //
+
+    // collapse how to play
+    $('#collapseExample').removeClass("show")
 
     $('.how-to-play').addClass("hide")
     $('.game-info').addClass("hide")
@@ -427,9 +439,6 @@ function reset() {
 
 
     //change team name
-    $('#team-name').html(`TEAM ONE <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-  </svg>`)
 
 }
 
@@ -560,20 +569,24 @@ function ballOutcome(e){
 
         if (playerOne === false) {
             playerTwoTotal = teamTotal;
-            $('#runchase-display').text(`PLAYER TWO TRAILS BY ${playerOneTotal-playerTwoTotal} RUNS`);
+            teamName = $('#team-name-text').text()
+            $('#runchase-display').text(`${teamName} TRAILS BY ${playerOneTotal-playerTwoTotal} RUNS`);
         }
 
         if (playerOne === false && playerTwoTotal > playerOneTotal){
-            $('#runchase-display').text(`PLAYER TWO WON BY ${wicketsLeft} WICKET(S)`);
+            teamName = $('#team-name-text').text()
+            $('#runchase-display').text(`${teamName} WON BY ${wicketsLeft} WICKET(S)`);
             $('.nextball').addClass('hide')
             setTimeout(function(){
-                $('.score').text('PLAYER TWO WON')
+                
+                $('.score').text(`${teamName} WINS`)
             }, 500)
             
         }
 
         if (playerOne === false && playerTwoTotal === playerOneTotal){
-            $('#runchase-display').text(`PLAYER TWO NEEDS 1 RUN TO WIN`);
+            teamName = $('#team-name-text').text()
+            $('#runchase-display').text(`${teamName} NEEDS 1 RUN TO WIN`);
         }
 
 
@@ -608,9 +621,9 @@ function ballOutcome(e){
             } 
 
             if(playerOne === false && playerTwoTotal < playerOneTotal) {
-                $('#runchase-display').text(`PLAYER ONE WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
+                $('#runchase-display').text(`${P1teamName} WON BY ${playerOneTotal-playerTwoTotal} RUN(S)`);
                 setTimeout(function(){
-                    $('.score').text('PLAYER ONE WON')
+                    $('.score').text(`${P1teamName} WINS`)
                 }, 500)
                 
             }
@@ -656,14 +669,20 @@ function ballOutcome(e){
 }
 
 function secondinnings() {
+    P1teamName = $('#team-name-text').text()
     init()
     playerOne = false
     $('#runchase').removeClass('hide');
     $('#runchase-display').text(`PLAYER TWO TRAILS BY ${playerOneTotal} RUNS`)
     readyPlayerTwo.addClass("hide")
-    $('#team-name').html(`TEAM TWO <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    $('#team-name').html(`<td id="team-name-text" contenteditable="true">TEAM TWO</td><td><svg id="editButton" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-  </svg>`)
+  </svg></td>`)
+
+  $('#editButton').click(function(){
+    $('#team-name-text').focus()
+   });
+    
 
     $('.score').html('<small class="display-4 score"> **PLAYER TWO** <p class="lead"> click inside the book to play the first ball </p></small>')
     
