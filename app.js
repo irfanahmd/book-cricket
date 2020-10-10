@@ -165,6 +165,7 @@ function ballOutcomeEdge(e) {
 
             // remove hover here box
             $('.nextball').addClass('hide')
+            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
 
             // show ready player 2 button
 
@@ -574,6 +575,7 @@ function ballOutcome(e){
             teamName = $('#team-name-text').text()
             $('#runchase-display').text(`${teamName} WON BY ${wicketsLeft} WICKET(S)`);
             $('.nextball').addClass('hide')
+            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
             setTimeout(function(){
                 
                 $('.score').text(`${teamName} WINS`)
@@ -609,6 +611,7 @@ function ballOutcome(e){
 
             // remove hover here box
             $('.nextball').addClass('hide')
+            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
 
             // show ready player 2 button
 
