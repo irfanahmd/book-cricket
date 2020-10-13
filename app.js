@@ -118,7 +118,7 @@ function ballOutcomeEdge(e) {
 
         //lose wicket
         $('.page').text('0');
-        $('.score').html('HIT WICKET <p class="lead"> too close to the cover page or away from the pages </p>');
+        $('.score').html('HIT WICKET <p class="lead"> stay on the pages of the book </p>');
         ballScore = "W";
         bowlerrun.pause()
         bowlerrun.currentTime = 0
