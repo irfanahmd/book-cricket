@@ -174,7 +174,7 @@ function ballOutcomeEdge(e) {
                 readyPlayerTwo.removeClass("hide")
                 setTimeout(function(){
                     P1teamName = $('#team-name-text').text()
-                    $('.score').text(`${P1teamName} ALL OUT FOR ${playerOneTotal}`)
+                    $('.score').html(`<p class = "lead" >${P1teamName} ALL OUT FOR ${playerOneTotal}</p>`)
                 }, 500)
             } 
 
@@ -621,7 +621,7 @@ function ballOutcome(e){
                 readyPlayerTwo.removeClass("hide")
                 setTimeout(function(){
                     P1teamName = $('#team-name-text').text()
-                    $('.score').text(`${P1teamName} ALL OUT FOR ${playerOneTotal}`)
+                    $('.score').html(`<p class = "lead" >${P1teamName} ALL OUT FOR ${playerOneTotal}</p>`)
                 }, 500)
             } 
 
