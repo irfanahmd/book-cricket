@@ -1,5 +1,7 @@
 /*----- constants -----*/
 
+
+
 // Player 1 Player 2
 const gameType = [640, 368, 176]
 const books = ['HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)', 'A WILD SHEEP CHASE (368 PAGES) [recommended]', 'LORD OF THE FLIES (176 PAGES)']
@@ -82,6 +84,7 @@ const teamTotalDisplay = $('#team-total')
 
 /*----- event listeners -----*/
 
+
 //cursor
 $('body').mousemove(function(e){
     cursor.css('top', (e.pageY - 10)).css('left', (e.pageX - 10))
@@ -128,7 +131,6 @@ function ballOutcomeEdge(e) {
         $('.grid').css('pointer-events', 'none');
         $('.book').css('pointer-events', 'all');
         $('body').css('cursor', 'not-allowed');
-        $('.gridmom').attr('title', 'hover on the red square for the next ball')
     
         $('.book:hover').css('border-color', 'yellow');
     
@@ -142,8 +144,11 @@ function ballOutcomeEdge(e) {
     
         //change next ball color to salmon with the text hover for next ball
     
-        $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
-    
+        if ($(window).width() < 768) {    
+            $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('TAP HERE FOR NEXT BALL');
+        } else {
+            $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
+        }
     
         
 
@@ -165,7 +170,7 @@ function ballOutcomeEdge(e) {
 
             // remove hover here box
             $('.nextball').addClass('hide')
-            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
+            
 
             // show ready player 2 button
 
@@ -477,7 +482,12 @@ function setupBattingLineup() {
 
 function ballOutcome(e){
 
-    
+    //change next ball color to salmon with the text hover for next ball
+    if ($(window).width() < 768) {    
+        $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('TAP HERE FOR NEXT BALL');
+    } else {
+        $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
+    }
 
     pageNumber = $('.page').text(e.target.className.split("-")[1]);
     
@@ -522,7 +532,7 @@ function ballOutcome(e){
     $(this).css('pointer-events', 'none');
     $('.book').css('pointer-events', 'all');
     $('body').css('cursor', 'not-allowed');
-    $('.gridmom').attr('title', 'hover on the red square for the next ball')
+    
 
     
 
@@ -536,9 +546,9 @@ function ballOutcome(e){
         cursor.toggleClass('hide')      
     }, 250);
 
-    //change next ball color to salmon with the text hover for next ball
 
-    $('.nextball').css('background-color', 'salmon').css('border-color', 'salmon').text('HOVER HERE FOR NEXT BALL');
+
+    
 
 
     
@@ -576,7 +586,7 @@ function ballOutcome(e){
             teamName = $('#team-name-text').text()
             $('#runchase-display').text(`${teamName} WON BY ${wicketsLeft} WICKET(S)`);
             $('.nextball').addClass('hide')
-            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
+            
             setTimeout(function(){
                 
                 $('.score').text(`${teamName} WINS`)
@@ -612,7 +622,7 @@ function ballOutcome(e){
 
             // remove hover here box
             $('.nextball').addClass('hide')
-            $('.gridmom').removeAttr('title', 'hover on the red square for the next ball')
+            
 
             // show ready player 2 button
 
@@ -702,7 +712,9 @@ function refresh(){
     $('.book').css('pointer-events', 'all');
     
     
-    $('.gridmom').removeAttr('title', 'hover on the red square for next ball')
+    
   
 }
+
+
 
