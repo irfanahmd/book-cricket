@@ -2,6 +2,11 @@ body {
     cursor: none;
 }
 
+button, .game-info {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
 #team-name td {
     border: none;
     cursor: pointer;
@@ -9,10 +14,6 @@ body {
 
 p {
     margin: 0;
-}
-
-.game-info {
-    font-size: 12px;
 }
 
 .responsive {
@@ -41,7 +42,7 @@ table {
     border-radius: 5px;
     border-top: 2px solid white;
     margin-left: 4px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 thead {
@@ -50,8 +51,9 @@ thead {
 
 .btn {
     margin: 4px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 700;
+    font-size: 14px;
 }
 
 .btn-success {
@@ -61,19 +63,19 @@ thead {
 .jumbotron {
     margin: 4px;
     padding: 10px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
 
+.display-4 {
+    font-size: 40px;
+}
+
 .img-container {
-    min-height: 190px;
+    min-height: 225px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.score {
-    height: 158.594;
 }
 
 .cursor {

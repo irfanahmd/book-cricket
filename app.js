@@ -2,7 +2,7 @@
 
 // Player 1 Player 2
 const gameType = [640, 368, 176]
-const books = ['HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)', 'A WILD SHEEP CHASE (368 PAGES)', 'LORD OF THE FLIES (176 PAGES)']
+const books = ['HARRY POTTER AND THE GOBLET OF FIRE (640 PAGES)', 'A WILD SHEEP CHASE (368 PAGES) [recommended]', 'LORD OF THE FLIES (176 PAGES)']
 const lineup = ['3 (SHORT GAME)', '5 (LONGER GAME)']
 const gameLength = [3, 5]
 
@@ -236,7 +236,7 @@ $('.nextball').mouseover(function() {
 
 
 $('.grid').mouseover(function(e) {
-    $(e.target).css('background-image', 'linear-gradient(yellowgreen, greenyellow, white)');
+    $(e.target).css('background-image', 'linear-gradient(yellowgreen, yellow, white)');
     setTimeout(function(){
         $(e.target).css('background-image', 'linear-gradient(black, darkgrey, white, white)');  
     }, 500)
@@ -526,7 +526,7 @@ function ballOutcome(e){
 
     
 
-    $('.cell:hover').css('background-image', 'linear-gradient(yellow, yellow)');
+    $('.cell:hover').css('background-image', 'linear-gradient(slateblue, slateblue)');
 
     setTimeout(function(){
         $('.cell').css('background-image', 'linear-gradient(black, darkgrey, white, white)') 
