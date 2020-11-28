@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Welcome to Book Cricket. An online, 2D cricket game using JavaScript, HTML and CSS.</strong>
+  <strong>Welcome to Book Cricket. An online, 2D cricket game using JavaScript, HTML, CSS and Bootstrap.</strong>
 
   <img width="704" alt="Game screenshot" src="screenshot.png">
 </p>
