@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-# [Launch Game](https://irfanahmd.github.io/book-cricket/)
+Click [here](https://irfanahmd.github.io/book-cricket/) or visit `https://irfanahmd.github.io/book-cricket/` to launch the game!
 
 ## Planned Future Enhancements
 
